@@ -12,7 +12,7 @@
 
 <body>
 
-	<div class="instruction">
+	<section class="instruction" id = "topscroll">
 		<h1>Get Started</h1>
 		
 		<div class="instructionclose">
@@ -20,37 +20,74 @@
 		</div>
 
 		<div class="mentoricon">
-			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
-			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
-			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+			<div class="images">
+				<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+					<h4>What are you good at?</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad iure sit expedita, exercitationem ex eos beatae porro, quod quos. Aperiam beatae reiciendis rem dolore, accusantium nesciunt, obcaecati fugit perferendis temporibus.</p>
+			</div>
+
+			<div class="images">
+				<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+					<h4>What do you want to learn?</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, minima esse architecto ducimus obcaecati error minus expedita alias iure nisi fugiat quo natus sequi ad laboriosam, consectetur aut, sapiente atque.</p>
+			</div>
+			
+			<div class="images">
+				<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+					<h4>Mento!</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sequi tempore soluta perferendis, dicta itaque incidunt hic dolorem, omnis, iusto blanditiis debitis. Eos doloremque cum odit magnam itaque, est alias!</p>
+			</div>
 		</div>
 
-	</div>
+	</section>
 
-	<div class="mainbackground">
+	<section class="mainbackground">
 		<img src="assets/images/background.jpg" alt="Main background image">
-
 		<header>
-
 			<h1>Mento:otneM</h1>
 			<h3>Building a community of developers and designers in Toronto</h3>
-				<div class="how">
-					<h5>How It Works</h5>
-				</div>
+			<a href="#topscroll"><div class="how">
+				<h5>How It Works</h5>
+			</div></a>
+		<a href="#aboutscroll"><div class="learnmore">
+			<i class="fa fa-angle-down fa-5x"></i>
+		</div>
+		</a>
+
 		</header>
 
-	</div>
+	</section>
+
+	<section class = "about" id = "aboutscroll">
+		<h1>Join the Community</h1>
+		<p>Are you ready for some awesomeness? I'll give you a moment. Okay, good. Now let's get started. Mento is all about you but it's also about everyone else who you can help and who can help you. Get started by selecting your skillset from the menu below. Next, select the kinds of skills you want to learn.</p>
+	</section>
 
 <script>
 	
 		$('.how').click(function (){
 			$('.instruction').slideDown('slow');
-			$('header').hide('slow');
+			$('header').hide(300);
 		});
 
 		$('.instructionclose').click(function () {
 			$('.instruction').slideUp('slow');
-			$('header').show('slow');
+			$('header').show(800);
+		});
+
+		$(function() {
+			$('a[href*=#]:not([href=#])').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+			$('html,body').animate({
+				scrollTop: target.offset().top
+					}, 1000);
+					return false;
+		      		}
+		    	}
+		  	});
 		});
 
 </script>
