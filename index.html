@@ -3,11 +3,57 @@
 	<meta charset="UTF-8">
 	<title>Mento</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
 <body>
 
-	<div class="div"></div>
+	<div class="instruction">
+		<h1>Get Started</h1>
+		
+		<div class="instructionclose">
+			<i class="fa fa-times fa-3x	"></i>
+		</div>
+
+		<div class="mentoricon">
+			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+			<img src="assets/images/mentor.jpg" alt="Mentor Icon">
+		</div>
+
+	</div>
+
+	<div class="mainbackground">
+		<img src="assets/images/background.jpg" alt="Main background image">
+
+		<header>
+
+			<h1>Mento:otneM</h1>
+			<h3>Building a community of developers and designers in Toronto</h3>
+				<div class="how">
+					<h5>How It Works</h5>
+				</div>
+		</header>
+
+	</div>
+
+<script>
 	
+		$('.how').click(function (){
+			$('.instruction').slideDown('slow');
+			$('header').hide('slow');
+		});
+
+		$('.instructionclose').click(function () {
+			$('.instruction').slideUp('slow');
+			$('header').show('slow');
+		});
+
+</script>
+
 </body>
 </html>
