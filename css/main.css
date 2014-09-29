@@ -117,7 +117,7 @@ header {
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out; }
   .how:hover {
-    background-color: #292929;
+    background-color: #565a5c;
     opacity: 0.85;
     -webkit-transition: all 0.2s ease-out; }
   .how h5 {
@@ -135,14 +135,35 @@ header {
     color: #fff; }
   .learnmore i {
     color: #fff;
-    -webkit-transition: all 0.6s ease-out;
+    -webkit-transition: all 0.4s ease-out;
     margin-top: -10px; }
   .learnmore:hover {
     cursor: pointer; }
     .learnmore:hover i {
-      color: #888ced;
+      color: #565a5c;
       margin-top: 0;
-      -webkit-transition: all 0.6s ease-out; }
+      opacity: 0.85;
+      -webkit-transition: all 0.4s ease-out; }
+
+.signup {
+  position: fixed;
+  top: 0;
+  right: 70px;
+  opacity: 0.9;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out; }
+  .signup h4 {
+    padding: 15px;
+    float: left;
+    font-size: 16px; }
+  .signup h4:first-child {
+    background-color: #565a5c;
+    border-radius: 0 0 3px 3px;
+    -webkit-transition: all 0.2s ease-out; }
+    .signup h4:first-child:hover {
+      background-color: #757A7D;
+      -webkit-transition: all 0.2s ease-out; }
 
 /*
 ==============================================================================
@@ -160,12 +181,12 @@ Instruction Slide Down Section
 
 .instructionclose i {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 12px;
+  top: 6px;
   cursor: pointer;
   color: #565a5c; }
   .instructionclose i:hover {
-    color: #fff; }
+    color: #000; }
 
 .mentoricon {
   width: 67%;

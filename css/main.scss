@@ -84,8 +84,8 @@ h1 {
 }
 
 .mainbackground {
-  width: 100%;
-  margin: 0 auto;
+  	width: 100%;
+  	margin: 0 auto;
   img {
     width: 100%;
     background-size: cover;
@@ -116,7 +116,8 @@ header {
 	cursor: pointer;
 	-webkit-transition: all 0.2s ease-out; 
 	&:hover {
-		background-color: #292929;
+		// background-color: #292929;
+		background-color: $gray;
 		opacity: 0.85;
 		-webkit-transition: all 0.2s ease-out; 
 	}
@@ -138,18 +139,46 @@ h5 {
 	}
 	i {
 		color: #fff;
-		-webkit-transition: all 0.6s ease-out;
+		-webkit-transition: all 0.4s ease-out;
 		margin-top: -10px;
 	}
 	&:hover {
 		cursor: pointer;
 		i {
-		color: $purple;
-			margin-top: 0;
-			 -webkit-transition: all 0.6s ease-out;
+		color: $gray;
+		margin-top: 0;
+		opacity: 0.85;
+		-webkit-transition: all 0.4s ease-out;
 		}
 	}
 }
+
+.signup {
+	position: fixed;
+	top: 0;
+	right: 70px;
+	opacity: 0.9;
+	color: #fff;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease-out;
+	h4 {
+		padding: 15px;
+		float: left;
+		font-size: 16px;
+	}
+	h4:first-child {
+		background-color: $gray;
+		border-radius: 0 0 3px 3px;
+		-webkit-transition: all 0.2s ease-out;
+		&:hover {
+			background-color: #757A7D;
+			-webkit-transition: all 0.2s ease-out;
+		}
+	}
+}
+
+
+
 
 /*
 ==============================================================================
@@ -172,12 +201,12 @@ h1 {
 
 .instructionclose i {
 	position: absolute;
-	right: 20px;
-	top:20px;
+	right: 12px;
+	top: 6px;
 	cursor: pointer;
 	color: $gray;
 	&:hover {
-		color: #fff;
+		color: #000; 
 	}
 }
 
