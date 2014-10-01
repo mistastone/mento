@@ -107,7 +107,7 @@ header {
 	}
 }
 
-.how {
+.button{
 	width: 12%;
 	opacity: 0.85;
 	margin: 0 auto;
@@ -153,8 +153,15 @@ h5 {
 	}
 }
 
-.signup {
+/*
+==============================================================================
+Sign In Overlay Section with Sign In Menu
+==============================================================================
+*/
+
+.signlog {
 	position: fixed;
+	z-index: 99;
 	top: 0;
 	right: 70px;
 	opacity: 0.9;
@@ -175,9 +182,80 @@ h5 {
 			-webkit-transition: all 0.2s ease-out;
 		}
 	}
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
 }
 
+.overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.75);
+}
 
+.overlay-content {
+	display: none;
+	position: relative;
+	top: 0;
+	left: 40%;
+	background-color: #fff;
+	// opacity: 0.9;
+	border-radius: 3px;
+	width: 20%;
+	p {
+		font: 300 20px/150% "Roboto Condensed", Sans-serif, Serif;
+		text-align: center;
+		color: $gray;
+		padding-top: 12px;
+		padding-left: 12px;
+		padding-right: 12px;
+		padding-bottom: 12px;
+	}
+	input {
+		border-radius: 3px;
+		padding: 10px;
+		padding-left: 6px;
+		color: $gray;
+		width: 100%;
+		border: 1px solid #D7D9D7;
+		-webkit-transition: all 0.2s ease-out;
+		&:focus {
+			outline: 0;
+			border: 1px solid #A7A8A7;
+			-webkit-transition: all 0.2s ease-out;
+		}
+	}
+	input[type=text] {
+			font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
+			color: $gray;
+		}
+	input[type=password] {
+		font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
+		color: $gray;
+		}
+}
+
+.inputs {
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+
+.sign {
+	width: 100%;
+	padding: 15px;
+	border-radius: 0 0 3px 3px;
+	p {
+		color: #fff;
+		padding: 0;
+	}
+}
 
 
 /*
@@ -187,9 +265,8 @@ Instruction Slide Down Section
 */
 
 .instruction {
+	background-color: $purple;
 	width: 100%;
-	// height: 350px;
-	// background-color: $purple;
 	display: none;
 h1 {
 	font: 300 45px/150% "Roboto Condensed", Sans-serif, Serif;
@@ -206,7 +283,8 @@ h1 {
 	cursor: pointer;
 	color: $gray;
 	&:hover {
-		color: #000; 
+		color: #757A7D;
+		opacity: 0.85;
 	}
 }
 
@@ -257,5 +335,15 @@ About Section
 		padding: 15px;
 		text-align: center;
 	}
+}
+
+.onethird {
+	width: 30%;
+	height: 400px;
+	background-color: #EDEFED;
+	border: 2px solid black;
+	margin-top: 40px;
+	margin-left: 50px;
+	margin-bottom: 40px;
 }
 

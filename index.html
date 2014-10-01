@@ -44,20 +44,54 @@
 			
 	<section class="mainbackground">
 		<img src="assets/images/background.jpg" alt="Main background image">
-			<div class="signup">
-				<h4>Sign Up</h4>
+
+<!-- SIGN UP/LOG IN BUTTONS AND SIGN UP OVERLAY -->
+
+			<div class="signlog">
+				<a class="show-popup" href = "#" data-showpopup><h4>Sign Up</h4></a>
 				<h4>Log In</h4>
+
+
 			</div>
+
+				<div class="overlay">
+					<div class="overlay-content popup">
+						<p>Hello!<br>Please sign up with your email address below.</p>
+
+						<div class="inputs">
+							<input type="text" placeholder="First name">
+						</div>
+						<div class="inputs">
+							<input type="text" placeholder="Last name">
+						</div>
+						<div class="inputs">
+							<input type="text" placeholder="Email Address">
+						</div>
+						<div class="inputs">
+							<input type="password" placeholder="Password">
+						</div>
+						<div class="inputs">
+							<input type="password" placeholder="Confirm Password">
+						</div>
+						<div class="button sign">
+							<p>Sign up</p>
+						</div>
+
+					</div>
+				</div>
+
+<!-- SIGN UP SECTION AND OVERLAY ENDS HERE -->
+
 		<header>
 
-			<h1>Mento:otneM</h1>
+			<h1>Mento</h1>
 			<h3>Building a community of developers and designers in Toronto</h3>
-			<a href="#topscroll"><div class="how">
+			<a href="#topscroll"><div class="button how">
 				<h5>How It Works</h5>
 			</div></a>
-		<a href="#aboutscroll"><div class="learnmore">
+			<a href="#aboutscroll"><div class="learnmore">
 			<i class="fa fa-angle-down fa-5x"></i>
-		</div>
+			</div>
 		</a>
 
 		</header>
@@ -67,9 +101,24 @@
 	<section class = "about" id = "aboutscroll">
 		<h1>Join the Community</h1>
 		<p>Are you ready for some awesomeness? I'll give you a moment. Okay, good. Now let's get started. Mento is all about you but it's also about everyone else who you can help and who can help you. Get started by selecting your skillset from the menu below. Next, select the kinds of skills you want to learn.</p>
+
+		<!-- <section class="profiles">
+			
+			<div class="onethird">
+			</div>
+			<div class="onethird">
+			</div>
+			<div class="onethird">
+			</div>
+
+
+		</section> -->
+
 	</section>
 
 <script>
+
+// SLIDE DOWN FOR HOW IT WORKS MENU
 	
 		$('.how').click(function (){
 			$('.instruction').slideDown('slow');
@@ -80,6 +129,8 @@
 			$('.instruction').slideUp('slow');
 			$('header').show(800);
 		});
+
+// SMOOTH SCROLL
 
 		$(function() {
 			$('a[href*=#]:not([href=#])').click(function() {
@@ -94,6 +145,28 @@
 		      		}
 		    	}
 		  	});
+		});
+
+// jQUERY OVERLAY EFFECT FOR SIGN IN MENU
+
+		$('.show-popup').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.popup' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+		
+		$('.overlay').click(function(){
+			$('.overlay, .overlay-content').fadeOut('fast');
+		})
+		
+		$('.overlay-content').click(function(){
+			return false;
 		});
 
 </script>
