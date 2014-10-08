@@ -411,4 +411,39 @@ Profile Page - Skills Section
   margin-top: 50px;
   opacity: 1; }
   .prof h5 {
-    font-family: "Roboto"; }
+    font-family: "Roboto", Sans-serif, Serif; }
+
+/*
+==============================================================================
+Profile Page - Skills Section - Drop Down Menu and List
+==============================================================================
+*/
+button.add {
+  outline: 0;
+  border: 0;
+  color: #fff;
+  padding: 5px;
+  font: 300 14px/150% "Roboto", Sans-serif, Serif;
+  width: 65px;
+  float: right;
+  margin-right: 20px; }
+
+select {
+  font: 300 16px/150% "Roboto", Sans-serif, Serif;
+  border-radius: 3px;
+  border: 1px solid #d8d8d8;
+  outline: 0; }
+
+.langskill,
+.langwant {
+  margin-left: 20px; }
+
+option {
+  color: #565a5c;
+  border-radius: 3px;
+  border: 1px solid #d8d8d8;
+  border-bottom-width: 2px; }
+
+.skilllist,
+.wantlist {
+  padding-top: 12px; }

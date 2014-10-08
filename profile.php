@@ -38,25 +38,61 @@
 	<section class ="skills">
 		<div class="havelearned">
 			<h3>I Am Offering These Skills...</h3>
-			<ul>
-				<li>HTML5</li>
-				<li>CSS3</li>
-				<li>Responsive Design</li>
-				<li>JavaScript</li>
-				<li>jQuery</li>
-			</ul>
+	
+				<select name="Languages" id="langskill" class = "langskill">
+					<option value="Angular">Angular</option>
+					<option value="CSS3">CSS3</option>
+					<option value="HTML5">HTML5</option>
+					<option value="JavaScript">JavaScript</option>
+					<option value="jQuery">jQuery</option>
+					<option value="PHP">PHP</option>
+					<option value="Responsive Design">Responsive Design</option>
+					<option value="Ruby">Ruby</option>
+					<option value="UX/UI Design">UX/UI Design</option>
+					<option value="Wordpress">Wordpress</option>
+				</select>
+
+				<select name="Level" id="level">
+					<option value="1">Beginner</option>
+					<option value="2">Intermediate</option>
+					<option value="3">Advanced</option>
+				</select>
+
+				<button class="button add" id="addskill">Add</button>
+				
+				<ul class="skilllist">
+				</ul>
 		</div>
 
 		<div class="learning">
 			<h3>I Am Looking For These Skills...</h3>
-			<ul>
-				<li>PHP</li>
-				<li>Angular</li>
-				<li>Node.js</li>
-				<li>Ruby</li>
-				<li>Jade</li>
+
+			<select name="Languages" id="langwant" class = "langwant">
+					<option value="Angular">Angular</option>
+					<option value="CSS3">CSS3</option>
+					<option value="HTML5">HTML5</option>
+					<option value="JavaScript">JavaScript</option>
+					<option value="jQuery">jQuery</option>
+					<option value="PHP">PHP</option>
+					<option value="Responsive Design">Responsive Design</option>
+					<option value="Ruby">Ruby</option>
+					<option value="UX/UI Design">UX/UI Design</option>
+					<option value="Wordpress">Wordpress</option>
+			</select>
+
+			<select name="Level" id="level">
+				<option value="1">Beginner</option>
+				<option value="2">Intermediate</option>
+				<option value="3">Advanced</option>
+			</select>
+
+
+			<button class="button add" id="addwant">Add</button>
+
+			<ul class = "wantlist">
 			</ul>
 		</div>
+
 	</section>
 
 	<section class="completeprofile">
@@ -66,7 +102,26 @@
 
 
 	</section>
-		
+
+<script>
+
+
+	$(function(){
+		$('#addskill').on('click', function(){
+			var selected = $('#langskill').val();
+			$('.skilllist').append('<li>'+ selected +'</li>');
+		});
+		});
+
+	$(function(){
+		$('#addwant').on('click', function(){
+			var selected = $('#langwant').val();
+			$('.wantlist').append('<li>'+ selected +'</li>');
+		});
+		});
+
+
+</script>
 	
 </body>
 </html>
