@@ -58,6 +58,14 @@
 			</ul>
 		</div>
 	</section>
+
+	<section class="completeprofile">
+		<div class="button prof">
+			<h5>Complete Your Profile</h5>
+		</div>
+
+
+	</section>
 		
 	
 </body>

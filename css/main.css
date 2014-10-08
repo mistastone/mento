@@ -373,15 +373,18 @@ Profile Page - Skills Section
 */
 .skills {
   clear: both;
-  width: 83%;
-  margin: 0 auto; }
+  width: 100%;
+  margin-left: 20%; }
 
 .learning,
 .havelearned {
   background-color: #fff;
   float: left;
-  margin-left: 20px;
   width: 30%;
+  margin-bottom: 50px;
+  border: 1px solid #d8d8d8;
+  border-bottom-width: 2px;
+  border-top: 3px solid #888ced;
   border-radius: 3px; }
   .learning h3,
   .havelearned h3 {
@@ -396,3 +399,16 @@ Profile Page - Skills Section
       padding-left: 24px;
       font: 300 16px/150% "Roboto Condensed", Sans-serif, Serif;
       color: #565a5c; }
+
+.havelearned {
+  margin-right: 20px; }
+
+.completeprofile {
+  clear: both; }
+
+.prof {
+  width: 400px;
+  margin-top: 50px;
+  opacity: 1; }
+  .prof h5 {
+    font-family: "Roboto"; }
