@@ -65,12 +65,27 @@
 					<option value="1">Beginner</option>
 					<option value="2">Intermediate</option>
 					<option value="3">Advanced</option>
+					<option value="4">Expert</option>
 				</select>
 
 				<button class="button add" id="addskill">Add</button>
 				
 				<ul class="skilllist"></ul>
 				<ul class ="skilllevel"></ul>
+
+				<!-- <div class="meter">
+					<span style="width: 25%"></span>
+				</div>
+				<div class="meter">
+					<span style="width: 50%"></span>
+				</div>
+				<div class="meter adv">
+					<span style="width: 75%"></span>
+				</div>
+				<div class="meter exp">
+					<span style="width: 95%"></span>
+				</div> -->
+
 
 		</div>
 
@@ -96,6 +111,7 @@
 				<option value="1">Beginner</option>
 				<option value="2">Intermediate</option>
 				<option value="3">Advanced</option>
+				<option value="4">Expert</option>
 			</select>
 
 
@@ -103,6 +119,14 @@
 
 			<ul class = "wantlist"></ul>
 			<ul class ="wantlevel"></ul>
+
+			<!-- <div class="begmeter">
+				<div class="greendot"></div>
+				<div class="graydot"></div>
+				<div class="graydot"></div>
+				<div class="graydot"></div>
+				<div class="graydot"></div>
+			</div> -->
 
 		</div>
 
@@ -145,12 +169,20 @@
 		});
 	});
 
+	// $(function(){
+	// 	$('#addwant').on('click', function(){
+	// 		var wantlevel = $('#levelwant').val();
+	// 		$('.wantlevel').append('<li class = "meter"><span style="width:'+ wantlevel +'%"></span></li>');
+	// 	});
+	// });
+
 	$(function(){
 		$('#addwant').on('click', function(){
 			var wantlevel = $('#levelwant').val();
 			$('.wantlevel').append('<li>'+ wantlevel + '</li>');
 		});
 	});
+
 
 
 </script>
