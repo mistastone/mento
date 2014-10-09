@@ -506,6 +506,7 @@ select {
 .langskill,
 .langwant {
 	margin-left: 20px;
+	margin-bottom: 12px;
 }
 
 option {
@@ -516,7 +517,11 @@ option {
 }
 
 .skilllist,
-.wantlist {
-	padding-top: 12px;
+.wantlist,
+.skilllevel,
+.wantlevel {
+	float: left; 
 }
+
+
 

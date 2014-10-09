@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<!-- NAVIGATION BAR -->
+
 	<header class="profile">
 		<a href="index.html"><h1>Mento</h1></a>
 		<ul>
@@ -20,6 +22,8 @@
 			<li>Profile</li>
 		</ul>
 	</header>
+
+<!-- PROFILE IMAGE AND NAME -->
 
 	<section class="profiletop">
 
@@ -35,7 +39,12 @@
 
 	</section>
 
+<!-- SKILLS SECTION -->
+
+<!-- SKILLS YOU KNOW -->
+
 	<section class ="skills">
+
 		<div class="havelearned">
 			<h3>I Am Offering These Skills...</h3>
 	
@@ -52,7 +61,7 @@
 					<option value="Wordpress">Wordpress</option>
 				</select>
 
-				<select name="Level" id="level">
+				<select name="Level" id="levelhave">
 					<option value="1">Beginner</option>
 					<option value="2">Intermediate</option>
 					<option value="3">Advanced</option>
@@ -60,9 +69,12 @@
 
 				<button class="button add" id="addskill">Add</button>
 				
-				<ul class="skilllist">
-				</ul>
+				<ul class="skilllist"></ul>
+				<ul class ="skilllevel"></ul>
+
 		</div>
+
+<!-- SKILLS YOU WANT TO LEARN -->
 
 		<div class="learning">
 			<h3>I Am Looking For These Skills...</h3>
@@ -80,7 +92,7 @@
 					<option value="Wordpress">Wordpress</option>
 			</select>
 
-			<select name="Level" id="level">
+			<select name="Level" id="levelwant">
 				<option value="1">Beginner</option>
 				<option value="2">Intermediate</option>
 				<option value="3">Advanced</option>
@@ -89,22 +101,26 @@
 
 			<button class="button add" id="addwant">Add</button>
 
-			<ul class = "wantlist">
-			</ul>
+			<ul class = "wantlist"></ul>
+			<ul class ="wantlevel"></ul>
+
 		</div>
 
 	</section>
+
+<!-- BUTTON TO ALLOW USERS TO COMPLETE THEIR PROFILE -->
 
 	<section class="completeprofile">
 		<div class="button prof">
 			<h5>Complete Your Profile</h5>
 		</div>
-
-
 	</section>
+
+<!-- JQUERY FOR PROFILE PAGE -->
 
 <script>
 
+// ADDING SKILLS FROM THE DROPDOWN MENU TO THE UL LIST BELOW
 
 	$(function(){
 		$('#addskill').on('click', function(){
@@ -119,6 +135,22 @@
 			$('.wantlist').append('<li>'+ selected +'</li>');
 		});
 		});
+
+// ADDING SKILL LEVEL FROM THE DROPDOWN MENU TO THE UL LIST BELOW
+
+	$(function(){
+		$('#addskill').on('click', function(){
+			var skilllevel = $('#levelhave').val();
+			$('.skilllevel').append('<li>'+ skilllevel + '</li>');
+		});
+	});
+
+	$(function(){
+		$('#addwant').on('click', function(){
+			var wantlevel = $('#levelwant').val();
+			$('.wantlevel').append('<li>'+ wantlevel + '</li>');
+		});
+	});
 
 
 </script>

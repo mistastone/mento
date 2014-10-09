@@ -436,7 +436,8 @@ select {
 
 .langskill,
 .langwant {
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-bottom: 12px; }
 
 option {
   color: #565a5c;
@@ -445,5 +446,7 @@ option {
   border-bottom-width: 2px; }
 
 .skilllist,
-.wantlist {
-  padding-top: 12px; }
+.wantlist,
+.skilllevel,
+.wantlevel {
+  float: left; }
