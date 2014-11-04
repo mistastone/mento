@@ -79,8 +79,9 @@ body {
   background-color: #edefed; }
 
 h3 {
-  font: 300 40px/150% "Roboto Condensed", Sans-serif, Serif;
-  color: #fff; }
+  font: 300 22px/150% "Roboto Condensed", Sans-serif, Serif;
+  color: #565a5c;
+  padding: 12px; }
 
 h4 {
   font: 300 19px/150% "Roboto", Sans-serif, Serif; }
@@ -104,11 +105,15 @@ h1 {
   text-align: center;
   width: 100%; }
   .mainpageheader h3 {
+    font: 300 40px/150% "Roboto Condensed", Sans-serif, Serif;
+    color: #fff;
+    padding: 0;
     margin-bottom: 60px; }
   .mainpageheader a {
     text-decoration: none; }
 
-.button {
+.button,
+.profilebutton {
   width: 12%;
   opacity: 0.85;
   margin: 0 auto;
@@ -116,11 +121,13 @@ h1 {
   background-color: #888ced;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-out; }
-  .button:hover {
+  .button:hover,
+  .profilebutton:hover {
     background-color: #565a5c;
     opacity: 0.85;
     -webkit-transition: all 0.2s ease-out; }
-  .button h5 {
+  .button h5,
+  .profilebutton h5 {
     color: #fff;
     font: 300 25px/150% "Roboto Condensed", Sans-serif, Serif;
     text-align: center;
@@ -188,36 +195,48 @@ Sign In Overlay Section with Sign In Menu
   display: none;
   position: relative;
   top: 0;
-  left: 40%;
+  left: 0;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 50%; }
+
+.overlay-content.popup {
   background-color: #fff;
   border-radius: 3px;
   width: 20%; }
-  .overlay-content p {
-    font: 300 20px/150% "Roboto Condensed", Sans-serif, Serif;
-    text-align: center;
-    color: #565a5c;
-    padding-top: 12px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-bottom: 12px; }
-  .overlay-content input {
-    border-radius: 3px;
-    padding: 10px;
-    padding-left: 6px;
-    color: #565a5c;
-    width: 100%;
-    border: 1px solid #D7D9D7;
+
+.overlay-content p,
+.fullprofile p {
+  font: 300 20px/150% "Roboto Condensed", Sans-serif, Serif;
+  text-align: center;
+  color: #565a5c;
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px; }
+.overlay-content input,
+.fullprofile input {
+  border-radius: 3px;
+  padding: 10px;
+  padding-left: 6px;
+  color: #565a5c;
+  width: 100%;
+  border: 1px solid #D7D9D7;
+  -webkit-transition: all 0.2s ease-out; }
+  .overlay-content input:focus,
+  .fullprofile input:focus {
+    outline: 0;
+    border: 1px solid #A7A8A7;
     -webkit-transition: all 0.2s ease-out; }
-    .overlay-content input:focus {
-      outline: 0;
-      border: 1px solid #A7A8A7;
-      -webkit-transition: all 0.2s ease-out; }
-  .overlay-content input[type=text] {
-    font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
-    color: #565a5c; }
-  .overlay-content input[type=password] {
-    font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
-    color: #565a5c; }
+.overlay-content input[type=text],
+.fullprofile input[type=text] {
+  font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
+  color: #565a5c; }
+.overlay-content input[type=password],
+.fullprofile input[type=password] {
+  font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
+  color: #565a5c; }
 
 .inputs {
   padding-right: 15px;
@@ -371,13 +390,18 @@ Profile Page - Image and Name
 Profile Page - Skills Section
 ==============================================================================
 */
-.skills {
+.skills,
+.fullprofile {
   clear: both;
   width: 100%;
   margin-left: 20%; }
 
 .learning,
-.havelearned {
+.havelearned,
+.aboutme,
+.education,
+.otherinterests,
+.portfolio {
   background-color: #fff;
   float: left;
   width: 30%;
@@ -386,16 +410,19 @@ Profile Page - Skills Section
   border-bottom-width: 2px;
   border-top: 3px solid #888ced;
   border-radius: 3px; }
-  .learning h3,
-  .havelearned h3 {
-    font: 300 22px/150% "Roboto Condensed", Sans-serif, Serif;
-    color: #565a5c;
-    padding: 12px; }
   .learning ul,
-  .havelearned ul {
+  .havelearned ul,
+  .aboutme ul,
+  .education ul,
+  .otherinterests ul,
+  .portfolio ul {
     padding-bottom: 12px; }
     .learning ul li,
-    .havelearned ul li {
+    .havelearned ul li,
+    .aboutme ul li,
+    .education ul li,
+    .otherinterests ul li,
+    .portfolio ul li {
       padding-left: 24px;
       font: 300 16px/150% "Roboto Condensed", Sans-serif, Serif;
       color: #565a5c; }
@@ -412,6 +439,17 @@ Profile Page - Skills Section
   opacity: 1; }
   .prof h5 {
     font-family: "Roboto", Sans-serif, Serif; }
+
+.fullprofile {
+  display: none;
+  margin-top: 25px; }
+
+.aboutme,
+.otherinterests {
+  margin-right: 20px; }
+
+.otherinterests {
+  clear: both; }
 
 /*
 ==============================================================================
@@ -432,7 +470,8 @@ select {
   font: 300 16px/150% "Roboto", Sans-serif, Serif;
   border-radius: 3px;
   border: 1px solid #d8d8d8;
-  outline: 0; }
+  outline: 0;
+  float: left; }
 
 .langskill,
 .langwant {
@@ -451,46 +490,61 @@ option {
 .wantlevel {
   float: left; }
 
-.greendot,
-.graydot {
-  width: 12px;
-  height: 12px;
+.meter {
+  margin-top: 5px;
+  margin-left: 5px; }
+
+.meter span {
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   margin: 3px;
+  background-color: #fff;
+  border: 1px solid #54f054;
+  -webkit-transition: all 0.2s ease-out;
   float: left; }
 
-.greendot {
-  background-color: #84BD00; }
+.meter span.filled {
+  background-color: #54f054; }
 
-.graydot {
-  background-color: #fff;
-  border: 1px solid #84BD00; }
+.meter span:hover {
+  -webkit-transition: all 0.2s ease-out; }
 
-.meter {
-  height: 12px;
-  /* Can be anything */
-  width: 100px;
-  margin-top: 8px;
-  margin-right: 18px;
-  float: right;
-  background: #edefed;
-  border-radius: 5px; }
+/*
+==============================================================================
+Profile Page - Skills Section - Slide Down Full Profile
+==============================================================================
+*/
+.fullprofile a {
+  font: 300 14px/150% "Roboto Condensed", Sans-serif, Serif;
+  padding-top: 8px;
+  display: inline-block; }
+  .fullprofile a:hover {
+    color: #565a5c; }
 
-.meter > span {
-  display: block;
-  height: 100%;
-  -webkit-border-top-right-radius: 8px;
-  -webkit-border-bottom-right-radius: 8px;
-  -moz-border-radius-topright: 8px;
-  -moz-border-radius-bottomright: 8px;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  -webkit-border-top-left-radius: 20px;
-  -webkit-border-bottom-left-radius: 20px;
-  -moz-border-radius-topleft: 20px;
-  -moz-border-radius-bottomleft: 20px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: #84BD00;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2bc253), color-stop(1, #54f054));
-  background-image: -webkit-linear-gradient(center bottom, #2bc253 37%, #54f054 69%); }
+.fullprofile p {
+  color: #aaaaaa;
+  font-size: 15px;
+  text-align: left;
+  padding: 0; }
+
+.profilebutton p {
+  text-align: center;
+  color: #fff; }
+
+button.profilebutton {
+  outline: 0;
+  border: 0;
+  color: #fff;
+  margin-bottom: 30px;
+  margin-left: 14px;
+  cursor: default; }
+
+button.profilebutton.cancel {
+  background: #fff;
+  border: 1px solid #D7D9D7;
+  margin-left: 0; }
+  button.profilebutton.cancel:hover {
+    border: 1px solid #565a5c; }
+  button.profilebutton.cancel p {
+    color: #565a5c; }

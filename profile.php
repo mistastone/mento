@@ -34,7 +34,7 @@
 	
 		<div class="profilename">
 			<h2>Michael Stone</h2>
-			<h3>Web Developer <span>(Toronto)</span></h3>
+			<h3>Front-End Web Developer <span>(Toronto)</span></h3>
 		</div>
 
 	</section>
@@ -61,12 +61,20 @@
 					<option value="Wordpress">Wordpress</option>
 				</select>
 
-				<select name="Level" id="levelhave">
+			<div id="meter" class="meter">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+				<!-- <select name="Level" id="levelhave">
 					<option value="1">Beginner</option>
 					<option value="2">Intermediate</option>
 					<option value="3">Advanced</option>
 					<option value="4">Expert</option>
-				</select>
+				</select> -->
 
 				<button class="button add" id="addskill">Add</button>
 				
@@ -120,13 +128,7 @@
 			<ul class = "wantlist"></ul>
 			<ul class ="wantlevel"></ul>
 
-			<!-- <div class="begmeter">
-				<div class="greendot"></div>
-				<div class="graydot"></div>
-				<div class="graydot"></div>
-				<div class="graydot"></div>
-				<div class="graydot"></div>
-			</div> -->
+			
 
 		</div>
 
@@ -135,10 +137,185 @@
 <!-- BUTTON TO ALLOW USERS TO COMPLETE THEIR PROFILE -->
 
 	<section class="completeprofile">
-		<div class="button prof">
+		<div id="complete" class="button prof">
 			<h5>Complete Your Profile</h5>
 		</div>
 	</section>
+
+	<section id="fullprofile" class="fullprofile">
+		<div class="aboutme">
+			<h3>About Me</h3>
+			<div class="inputs">
+				<p>A little story about me and what I do...</p>
+				<a class="aboutcomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+
+		<div class="education">
+			<h3>Education</h3>
+			<div class="inputs">
+				<p>School Name</p>
+				<p>Program</p>
+				<p>Year Started</p>
+				<p>Year Finished</p>
+				<a class="educomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+
+		<div class="otherinterests">
+			<h3>Other Interests</h3>
+			<div class="inputs">
+				<p>When I'm not designing or coding I like to...</p>
+				<a class="othercomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+
+		<div class="portfolio">
+			<h3>Portfolio Links</h3>
+			<div class="inputs">
+				<p>Check out my work...</p>
+				<a class="portcomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+
+		<div class="overlay">
+			<div class="overlay-content aboutcontent">
+				<h3>About Me</h3>
+
+				<div class="inputs">
+					<input type="text" placeholder="A little story about me and what I do...">
+				</div>
+			
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>
+				<button class="profilebutton cancel">
+					<p>Cancel</p>
+				</button>
+			</div>
+
+			<div class="overlay-content educontent">
+				<h3>Education</h3>
+
+				<div class="inputs">
+					<input type="text" placeholder="A little story about me and what I do...">
+				</div>
+			
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>
+				<button class="profilebutton cancel">
+					<p>Cancel</p>
+				</button>
+			</div>
+
+			<div class="overlay-content othercontent">
+				<h3>Other Interests</h3>
+
+				<div class="inputs">
+					<input type="text" placeholder="A little story about me and what I do...">
+				</div>
+			
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>
+				<button class="profilebutton cancel">
+					<p>Cancel</p>
+				</button>
+			</div>
+
+				<div class="overlay-content portcontent">
+				<h3>Portfolio Links</h3>
+
+				<div class="inputs">
+					<input type="text" placeholder="A little story about me and what I do...">
+				</div>
+			
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>
+				<button class="profilebutton cancel">
+					<p>Cancel</p>
+				</button>
+			</div>
+
+
+		</div>
+
+	</section>
+
+	<script>
+
+		$('.aboutcomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.aboutcontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+		$('.educomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.educontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+			$('.othercomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.othercontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+			$('.portcomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.portcontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+		
+		$('.profilebutton.cancel').click(function(){
+			$('.overlay, .overlay-content').fadeOut('fast');
+		})
+		
+		$('.overlay-content').click(function(){
+			return false;
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- JQUERY FOR PROFILE PAGE -->
 
@@ -183,7 +360,32 @@
 		});
 	});
 
+	// $(function(){
+	// 	$('#meter').find('span').mouseover(function(){
+	// 		$(this).prevAll().andSelf().addClass('filled');
+	// 		$(this).nextAll().removeClass('filled');
+	// 	});
+	// });
 
+	$(function(){
+		$('#meter').find('span').on('click',function(){
+			$(this).prevAll().andSelf().addClass('filled');
+			$(this).nextAll().removeClass('filled');
+		});
+	});
+
+	// $(function(){
+	// 	$('#meter').find('span').mouseover(function(){
+	// 		$(this).prevAll().andSelf().addClass('filled');
+	// 		$(this).nextAll().removeClass('filled');
+	// 	});
+	// });
+
+	$(function(){
+		$('#complete').on('click',function(){
+			$('#fullprofile').slideDown('slow');
+		});
+	});
 
 </script>
 	
