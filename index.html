@@ -4,11 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Mento</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/shayan.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400' rel='stylesheet' type='text/css'>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 
 <body>
 
@@ -58,23 +60,26 @@
 					<div class="overlay-content popup">
 						<p>Hello!<br>Please sign up with your email address below.</p>
 
-						<div class="inputs">
-							<input type="text" placeholder="First name">
-						</div>
-						<div class="inputs">
-							<input type="text" placeholder="Last name">
-						</div>
-						<div class="inputs">
-							<input type="text" placeholder="Email Address">
-						</div>
-						<div class="inputs">
-							<input type="password" placeholder="Password">
-						</div>
-						<div class="inputs">
-							<input type="password" placeholder="Confirm Password">
-						</div>
-						<div class="button sign">
-							<p>Sign up</p>
+						<form class = "signup_form">
+							<div class="inputs">
+								<input type="text" name = "first" placeholder="First name">
+							</div>
+							<div class="inputs">
+								<input type="text" name = "last" placeholder="Last name">
+							</div>
+							<div class="inputs">
+								<input type="text" name = "email" placeholder="Email Address">
+							</div>
+							<div class="inputs">
+								<input type="password" name = "password" placeholder="Password">
+							</div>
+							<div class="button sign" id = "signup">
+								<p>Sign up</p>
+							</div>
+						</form>
+						
+						<div class = "success-message">
+							<p> An email has been sent to your account </p>
 						</div>
 
 					</div>
@@ -102,62 +107,21 @@
 		<h1>Join the Community</h1>
 		<p>Are you ready for some awesomeness? I'll give you a moment. Okay, good. Now let's get started. Mento is all about you but it's also about everyone else who you can help and who can help you. Get started by selecting your skillset from the menu below. Next, select the kinds of skills you want to learn.</p>
 
+		<!-- <section class="profiles">
+			
+			<div class="onethird">
+			</div>
+			<div class="onethird">
+			</div>
+			<div class="onethird">
+			</div>
+
+
+		</section> -->
+
 	</section>
 
-<script>
-
-// SLIDE DOWN FOR HOW IT WORKS MENU
-	
-		$('.how').click(function (){
-			$('.instruction').slideDown('slow');
-			$('header').hide(300);
-		});
-
-		$('.instructionclose').click(function () {
-			$('.instruction').slideUp('slow');
-			$('header').show(800);
-		});
-
-// SMOOTH SCROLL
-
-		$(function() {
-			$('a[href*=#]:not([href=#])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-				var target = $(this.hash);
-				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-				if (target.length) {
-			$('html,body').animate({
-				scrollTop: target.offset().top
-					}, 1000);
-					return false;
-		      		}
-		    	}
-		  	});
-		});
-
-// jQUERY OVERLAY EFFECT FOR SIGN IN MENU
-
-		$('.show-popup').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.popup' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-		
-		$('.overlay').click(function(){
-			$('.overlay, .overlay-content').fadeOut('fast');
-		})
-		
-		$('.overlay-content').click(function(){
-			return false;
-		});
-
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
