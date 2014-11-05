@@ -271,82 +271,6 @@
 
 	<script>
 
-	$('.addschool').click(function(){
-		$('.schoolinfo:first').clone().find('input:text').val('').end().appendTo('.schoolcontainer');
-	});
-
-	$('.addport').click(function(){
-		$('.portinfo:first').clone().find('input:text').val('').end().appendTo('.portcontainer');
-	});
-
-		$('.aboutcomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.aboutcontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-		$('.educomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.educontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-			$('.othercomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.othercontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-			$('.portcomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.portcontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-		
-		$('.profilebutton.cancel').click(function(){
-			$('.overlay, .overlay-content').fadeOut('fast');
-		})
-		
-		$('.overlay-content').click(function(){
-			return false;
-		});
-
-// ADDING SKILLS FROM THE DROPDOWN MENU TO THE UL LIST BELOW
-
-	$(function(){
-		$('#addskill').on('click', function(){
-			var selected = $('#langskill').val();
-			$('.skilllist').append('<li>'+ selected +'</li>');
-		});
-		});
-
-	$(function(){
-		$('#addwant').on('click', function(){
-			var selected = $('#langwant').val();
-			$('.wantlist').append('<li>'+ selected +'</li>');
-		});
-		});
-
 // ADDING SKILL LEVEL FROM THE DROPDOWN MENU TO THE UL LIST BELOW
 
 	$(function(){
@@ -391,9 +315,103 @@
 	// 	});
 	// });
 
+// 'Complete Profile' Button
+
 	$('#complete').on('click',function(){
 			$('#fullprofile').slideDown('slow');
 		});
+
+
+// Add Additional School, Program, and Year
+
+	$('.addschool').click(function(){
+		$('.schoolinfo:first').clone().find('input:text').val('').end().appendTo('.schoolcontainer');
+	});
+
+// Add Additional Portfolio Item, Link, and Description
+
+	$('.addport').click(function(){
+		$('.portinfo:first').clone().find('input:text').val('').end().appendTo('.portcontainer');
+	});
+
+// Overlay for 'About Me' Details
+
+		$('.aboutcomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.aboutcontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+// Overlay for 'Education' Details
+
+		$('.educomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.educontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+// Overlay for 'Other Interests' Details
+
+			$('.othercomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.othercontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+// Overlay for 'Portfolio Links'
+
+			$('.portcomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.portcontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+// 'Save' and 'Cancel' Buttons for profile detail overlay sections
+
+		$('.profilebutton.cancel').click(function(){
+			$('.overlay, .overlay-content').fadeOut('fast');
+		})
+		
+		$('.overlay-content').click(function(){
+			return false;
+		});
+
+// ADDING SKILLS FROM THE DROPDOWN MENU TO THE UL LIST BELOW
+
+	$(function(){
+		$('#addskill').on('click', function(){
+			var selected = $('#langskill').val();
+			$('.skilllist').append('<li>'+ selected +'</li>');
+		});
+		});
+
+	$(function(){
+		$('#addwant').on('click', function(){
+			var selected = $('#langwant').val();
+			$('.wantlist').append('<li>'+ selected +'</li>');
+		});
+		});
+
 
 </script>
 	
