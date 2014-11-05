@@ -142,6 +142,8 @@
 		</div>
 	</section>
 
+<!-- FULL PROFILE SECTION -->
+
 	<section id="fullprofile" class="fullprofile">
 		<div class="aboutme">
 			<h3>About Me</h3>
@@ -154,10 +156,7 @@
 		<div class="education">
 			<h3>Education</h3>
 			<div class="inputs">
-				<p>School Name</p>
-				<p>Program</p>
-				<p>Year Started</p>
-				<p>Year Finished</p>
+				<p>Where I got educated...</p>
 				<a class="educomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
@@ -183,7 +182,7 @@
 				<h3>About Me</h3>
 
 				<div class="inputs">
-					<input type="text" placeholder="A little story about me and what I do...">
+					<textarea rows="6" placeholder="A little story about me and what I do..."></textarea>
 				</div>
 			
 				<button class="profilebutton">
@@ -198,14 +197,28 @@
 				<h3>Education</h3>
 
 				<div class="inputs">
-					<input type="text" placeholder="A little story about me and what I do...">
-				</div>
-			
+					<div class="schoolinfo">
+						<input class="schoolname" type="text" placeholder="School Name">
+						<input class="schoolname" type="text" placeholder="Program">
+						<input class="year" type="text" placeholder="Year Started">
+						<input class="year" type="text" placeholder="Year Finished">
+					</div>
+					
+					<div class="schoolcontainer"></div>
+				
+				<button class="profilebutton addschool">
+					<p>Add More</p>
+				</button>
+			</div>
+
+				
 				<button class="profilebutton">
 					<p>Save</p>
 				</button>
+				
 				<button class="profilebutton cancel">
 					<p>Cancel</p>
+				
 				</button>
 			</div>
 
@@ -213,7 +226,7 @@
 				<h3>Other Interests</h3>
 
 				<div class="inputs">
-					<input type="text" placeholder="A little story about me and what I do...">
+					<textarea rows="6" placeholder="When I'm not designing or coding I like to..."></textarea>
 				</div>
 			
 				<button class="profilebutton">
@@ -224,27 +237,47 @@
 				</button>
 			</div>
 
-				<div class="overlay-content portcontent">
+			<div class="overlay-content portcontent">
 				<h3>Portfolio Links</h3>
 
-				<div class="inputs">
-					<input type="text" placeholder="A little story about me and what I do...">
-				</div>
-			
-				<button class="profilebutton">
-					<p>Save</p>
-				</button>
-				<button class="profilebutton cancel">
-					<p>Cancel</p>
+			<div class="inputs">
+					<div class="portinfo">
+						<input class="nameproject" type="text" placeholder="Name of Project">
+						<input class="nameproject" type="text" placeholder="URL">
+						<textarea rows="6" placeholder="Description"></textarea>
+					</div>
+					
+					<div class="portcontainer"></div>
+				
+				<button class="profilebutton addport">
+					<p>Add More</p>
 				</button>
 			</div>
 
+				
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>
+				
+				<button class="profilebutton cancel">
+					<p>Cancel</p>
+				
+				</button>
+			</div>
 
 		</div>
 
 	</section>
 
 	<script>
+
+	$('.addschool').click(function(){
+		$('.schoolinfo:first').clone().find('input:text').val('').end().appendTo('.schoolcontainer');
+	});
+
+	$('.addport').click(function(){
+		$('.portinfo:first').clone().find('input:text').val('').end().appendTo('.portcontainer');
+	});
 
 		$('.aboutcomplete').click(function(event){
 			event.preventDefault();
@@ -289,7 +322,6 @@
 			$('.portcontent' + selectedPopup).show();
 			$('.overlay-content').css({'top' : scrollTop+40+'px'});
 		});
-
 		
 		$('.profilebutton.cancel').click(function(){
 			$('.overlay, .overlay-content').fadeOut('fast');
@@ -298,28 +330,6 @@
 		$('.overlay-content').click(function(){
 			return false;
 		});
-
-	</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- JQUERY FOR PROFILE PAGE -->
-
-<script>
 
 // ADDING SKILLS FROM THE DROPDOWN MENU TO THE UL LIST BELOW
 
@@ -381,11 +391,9 @@
 	// 	});
 	// });
 
-	$(function(){
-		$('#complete').on('click',function(){
+	$('#complete').on('click',function(){
 			$('#fullprofile').slideDown('slow');
 		});
-	});
 
 </script>
 	

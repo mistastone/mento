@@ -189,7 +189,7 @@ Sign In Overlay Section with Sign In Menu
   height: 100%;
   width: 100%;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.75); }
+  background: rgba(237, 239, 237, 0.75); }
 
 .overlay-content {
   display: none;
@@ -199,7 +199,8 @@ Sign In Overlay Section with Sign In Menu
   margin: 0 auto;
   background-color: #fff;
   border-radius: 3px;
-  width: 50%; }
+  width: 50%;
+  box-shadow: 0 0 30px 0 #565a5c; }
 
 .overlay-content.popup {
   background-color: #fff;
@@ -216,7 +217,10 @@ Sign In Overlay Section with Sign In Menu
   padding-right: 12px;
   padding-bottom: 12px; }
 .overlay-content input,
-.fullprofile input {
+.overlay-content textarea,
+.fullprofile input,
+.fullprofile textarea {
+  resize: none;
   border-radius: 3px;
   padding: 10px;
   padding-left: 6px;
@@ -225,12 +229,16 @@ Sign In Overlay Section with Sign In Menu
   border: 1px solid #D7D9D7;
   -webkit-transition: all 0.2s ease-out; }
   .overlay-content input:focus,
-  .fullprofile input:focus {
+  .overlay-content textarea:focus,
+  .fullprofile input:focus,
+  .fullprofile textarea:focus {
     outline: 0;
     border: 1px solid #A7A8A7;
     -webkit-transition: all 0.2s ease-out; }
 .overlay-content input[type=text],
-.fullprofile input[type=text] {
+.overlay-content textarea,
+.fullprofile input[type=text],
+.fullprofile textarea {
   font: 300 15px/150% "Roboto Condensed", Sans-serif, Serif;
   color: #565a5c; }
 .overlay-content input[type=password],
@@ -518,7 +526,8 @@ Profile Page - Skills Section - Slide Down Full Profile
 .fullprofile a {
   font: 300 14px/150% "Roboto Condensed", Sans-serif, Serif;
   padding-top: 8px;
-  display: inline-block; }
+  display: inline-block;
+  text-decoration: none; }
   .fullprofile a:hover {
     color: #565a5c; }
 
@@ -548,3 +557,19 @@ button.profilebutton.cancel {
     border: 1px solid #565a5c; }
   button.profilebutton.cancel p {
     color: #565a5c; }
+
+input:hover,
+textarea:hover {
+  border: 1px solid #565a5c; }
+
+input.schoolname {
+  width: 30%; }
+
+input.year {
+  width: 19%; }
+
+button.addschool,
+button.addport {
+  margin-left: 0;
+  margin-top: 12px;
+  margin-bottom: 12px; }
