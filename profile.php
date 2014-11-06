@@ -140,7 +140,8 @@
 		<div class="aboutme">
 			<h3>About Me</h3>
 			<div class="inputs">
-				<p>A little story about me and what I do...</p>
+				<p class ="aboutplaceholder">A little story about me and what I do...</p>
+				<p class ="aboutfill"></p>
 				<a class="aboutcomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
@@ -148,7 +149,8 @@
 		<div class="education">
 			<h3>Education</h3>
 			<div class="inputs">
-				<p>Where I got educated...</p>
+				<p class= "eduplaceholder">Where I got educated...</p>
+				<!-- <ul class="schoollist"></ul> -->
 				<a class="educomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
@@ -186,10 +188,10 @@
 				<h3>About Me</h3>
 
 				<div class="inputs">
-					<textarea rows="6" placeholder="A little story about me and what I do..."></textarea>
+					<textarea maxlength="600" rows="6" placeholder="A little story about me and what I do..."></textarea>
 				</div>
 			
-				<button class="profilebutton">
+				<button class="profilebutton aboutsave">
 					<p>Save</p>
 				</button>
 				<button class="profilebutton cancel">
@@ -217,7 +219,7 @@
 				</button>
 			</div>
 
-				<button class="profilebutton">
+				<button class="profilebutton save">
 					<p>Save</p>
 				</button>
 				<button class="profilebutton cancel">
@@ -319,168 +321,9 @@
 			<h5>Complete Your Profile</h5>
 		</div>
 	</section>
-
-
-<!-- jQUERY SCRIPT STARTS HERE -->
-<script>
-
-// ADDING SKILL LEVEL FROM THE DROPDOWN MENU TO THE UL LIST BELOW
-
-	$(function(){
-		$('#addskill').on('click', function(){
-			var skilllevel = $('#levelhave').val();
-			$('.skilllevel').append('<li>'+ skilllevel + '</li>');
-		});
-	});
-
-	// $(function(){
-	// 	$('#addwant').on('click', function(){
-	// 		var wantlevel = $('#levelwant').val();
-	// 		$('.wantlevel').append('<li class = "meter"><span style="width:'+ wantlevel +'%"></span></li>');
-	// 	});
-	// });
-
-	$(function(){
-		$('#addwant').on('click', function(){
-			var wantlevel = $('#levelwant').val();
-			$('.wantlevel').append('<li>'+ wantlevel + '</li>');
-		});
-	});
-
-	// $(function(){
-	// 	$('#meter').find('span').mouseover(function(){
-	// 		$(this).prevAll().andSelf().addClass('filled');
-	// 		$(this).nextAll().removeClass('filled');
-	// 	});
-	// });
-
-	$(function(){
-		$('#meter').find('span').on('click',function(){
-			$(this).prevAll().andSelf().addClass('filled');
-			$(this).nextAll().removeClass('filled');
-		});
-	});
-
-	// $(function(){
-	// 	$('#meter').find('span').mouseover(function(){
-	// 		$(this).prevAll().andSelf().addClass('filled');
-	// 		$(this).nextAll().removeClass('filled');
-	// 	});
-	// });
-
-// 'Complete Profile' Button
-
-	$('#complete').on('click',function(){
-		$(this).hide();
-			$('#fullprofile').slideDown('slow');
-		});
-
-
-// Add Additional School, Program, and Year
-
-	$('.addschool').click(function(){
-		$('.schoolinfo:first').clone().find('input:text').val('').end().appendTo('.schoolcontainer');
-	});
-
-// Add Additional Portfolio Item, Link, and Description
-
-	$('.addport').click(function(){
-		$('.portinfo:first').clone().find('input:text').val('').end().appendTo('.portcontainer');
-	});
-
-// Overlay for 'About Me' Details
-
-		$('.aboutcomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.aboutcontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-// Overlay for 'Education' Details
-
-		$('.educomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.educontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-// Overlay for 'Other Interests' Details
-
-			$('.othercomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.othercontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-// Overlay for 'Portfolio Links'
-
-			$('.portcomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.portcontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-// Overlay for 'Contact Info' Details
-
-			$('.contactcomplete').click(function(event){
-			event.preventDefault();
-			var docHeight = $(document).height();
-			var scrollTop = $(window).scrollTop();
-			var selectedPopup = $(this).data('showpopup');
-
-			$('.overlay').fadeIn('fast').css({'height' : docHeight});
-			$('.contactcontent' + selectedPopup).show();
-			$('.overlay-content').css({'top' : scrollTop+40+'px'});
-		});
-
-// 'Save' and 'Cancel' Buttons for profile detail overlay sections
-
-		$('.profilebutton.cancel').click(function(){
-			$('.overlay, .overlay-content').fadeOut('fast');
-		})
-		
-		$('.overlay-content').click(function(){
-			return false;
-		});
-
-// ADDING SKILLS FROM THE DROPDOWN MENU TO THE UL LIST BELOW
-
-	$(function(){
-		$('#addskill').on('click', function(){
-			var selected = $('#langskill').val();
-			$('.skilllist').append('<li>'+ selected +'</li>');
-		});
-		});
-
-	$(function(){
-		$('#addwant').on('click', function(){
-			var selected = $('#langwant').val();
-			$('.wantlist').append('<li>'+ selected +'</li>');
-		});
-		});
-
-
-</script>
 	
+
+<script src="js/main.js"></script>
+
 </body>
 </html>
