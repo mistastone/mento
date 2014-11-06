@@ -615,7 +615,7 @@ option {
 
 /*
 ==============================================================================
-Profile Page - Skills Section - Slide Down Full Profile
+Profile Page - Slide Down Full Profile
 ==============================================================================
 */
 
@@ -647,7 +647,7 @@ button.profilebutton {
 	color: #fff;
 	margin-bottom: 30px;
 	margin-left: 14px;
-	cursor: default;
+	cursor: pointer;
 }
 
 button.profilebutton.cancel {
@@ -655,7 +655,7 @@ button.profilebutton.cancel {
 	border: 1px solid #D7D9D7;
 	margin-left: 0;
 	&:hover {
-		border: 1px solid $gray;
+		border: 1px solid #A7A8A7;
 	}
 	p {
 		color: $gray;
@@ -664,7 +664,7 @@ button.profilebutton.cancel {
 
 input:hover,
 textarea:hover {
-	border: 1px solid $gray;
+	border: 1px solid #A7A8A7;
 }
 
 input.schoolname {
@@ -682,6 +682,12 @@ button.addport {
 	margin-bottom: 12px;
 }
 
+/*
+==============================================================================
+Profile Page - CSS FOR CONTACT INFORMATION SECTION
+==============================================================================
+*/
+
 .socialicon {
 	width: 100%;
 }
@@ -694,8 +700,21 @@ button.addport {
 	width: 30%;
 }
 
+input.contacttext {
+	margin-bottom: 12px;
+	width: 80%;
+}
+
+.socialicons i {
+	margin-bottom: 10px;
+}
+
 i.facebook {
 	color: #425F9C;
+}
+
+i.tumblr {
+	color: #35465c;
 }
 
 i.twitter {
@@ -715,13 +734,5 @@ i.mail {
 	width: 17%;
 }
 
-input.contacttext {
-	margin-bottom: 12px;
-	width: 80%;
-}
-
-.socialicons i {
-	margin-bottom: 10px;
-}
 
 

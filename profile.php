@@ -132,17 +132,9 @@
 
 	</section>
 
-<!-- BUTTON TO ALLOW USERS TO COMPLETE THEIR PROFILE -->
-
-	<section class="completeprofile">
-		<div id="complete" class="button prof">
-			<h5>Complete Your Profile</h5>
-		</div>
-	</section>
-
 <!-- FULL PROFILE SECTION -->
 
-<!-- SLIDE DOWN SECTIONS -->
+<!-- FIXED SECTIONS THAT SLIDE DOWN ON CLICK -->
 
 	<section id="fullprofile" class="fullprofile">
 		<div class="aboutme">
@@ -185,9 +177,9 @@
 			</div>
 		</div>
 
-<!-- EDITABLE PROFILE SECTIONS - ABOUT ME, EDUCATION, INTERESTS, PORTFOLIO LINKS -->
+<!-- START OF EDITABLE PROFILE SECTIONS - ABOUT ME, EDUCATION, INTERESTS, PORTFOLIO LINKS, CONTACT -->
 
-<!-- ABOUT ME -->
+<!-- ABOUT ME OVERLAY -->
 
 		<div class="overlay">
 			<div class="overlay-content aboutcontent">
@@ -205,7 +197,7 @@
 				</button>
 			</div>
 
-<!-- EDUCATION -->
+<!-- EDUCATION OVERLAY -->
 
 			<div class="overlay-content educontent">
 				<h3>Education</h3>
@@ -233,7 +225,7 @@
 				</button>
 			</div>
 
-<!-- OTHER INTERESTS -->
+<!-- OTHER INTERESTS OVERLAY -->
 
 			<div class="overlay-content othercontent">
 				<h3>Other Interests</h3>
@@ -250,7 +242,7 @@
 				</button>
 			</div>
 
-<!-- PORTFOLIO LINKS -->
+<!-- PORTFOLIO LINKS OVERLAY -->
 
 			<div class="overlay-content portcontent">
 				<h3>Portfolio Links</h3>
@@ -259,7 +251,7 @@
 					<div class="portinfo">
 						<input class="nameproject" type="text" placeholder="Name of Project">
 						<input class="nameproject" type="text" placeholder="URL">
-						<textarea rows="6" placeholder="Description"></textarea>
+						<textarea rows="6" placeholder="Description, languages, and tools used..."></textarea>
 					</div>
 					
 					<div class="portcontainer"></div>
@@ -277,7 +269,7 @@
 				</button>
 			</div>
 
-<!-- CONTACT INFO -->
+<!-- CONTACT INFO OVERLAY -->
 
 			<div class="overlay-content contactcontent">
 				<h3>Contact Info</h3>
@@ -285,6 +277,8 @@
 				<div class="inputs">
 					<div class="socialicons">
 						<i class="fa fa-github-square fa-3x"></i>
+						<i class="fa fa-codepen fa-3x"></i>
+						<i class="tumblr fa fa-tumblr-square fa-3x"></i>
 						<i class="twitter fa fa-twitter-square fa-3x"></i>
 						<i class="facebook fa fa-facebook-square fa-3x"></i>
 						<i class="linkedin fa fa-linkedin-square fa-3x"></i>
@@ -293,6 +287,8 @@
 
 					<div class="socialtext">
 						<input class="contacttext" type="text" placeholder="Github URL">
+						<input class="contacttext" type="text" placeholder="Codepen URL">
+						<input class="contacttext" type="text" placeholder="Tumblr URL">
 						<input class="contacttext" type="text" placeholder="Twitter URL">
 						<input class="contacttext" type="text" placeholder="Facebook URL">
 						<input class="contacttext" type="text" placeholder="LinkedIn URL">
@@ -301,20 +297,31 @@
 
 				</div>
 
-			<div class="contactbuttons">
-				<button class="profilebutton">
-					<p>Save</p>
-				</button>
-				<button class="profilebutton cancel">
-					<p>Cancel</p>
-				</button>
-			</div>
+				<div class="contactbuttons">
+					<button class="profilebutton">
+						<p>Save</p>
+					</button>
+					<button class="profilebutton cancel">
+						<p>Cancel</p>
+					</button>
+				</div>
 			</div>
 
+<!-- CLOSING DIV FOR OVERLAY SECTION -->
 		</div>
 
 	</section>
 
+<!-- BUTTON TO ALLOW USERS TO COMPLETE THEIR PROFILE -->
+
+	<section class="completeprofile">
+		<div id="complete" class="button prof">
+			<h5>Complete Your Profile</h5>
+		</div>
+	</section>
+
+
+<!-- jQUERY SCRIPT STARTS HERE -->
 <script>
 
 // ADDING SKILL LEVEL FROM THE DROPDOWN MENU TO THE UL LIST BELOW
@@ -364,7 +371,8 @@
 // 'Complete Profile' Button
 
 	$('#complete').on('click',function(){
-			$('#fullprofile').slideDown('fast');
+		$(this).hide();
+			$('#fullprofile').slideDown('slow');
 		});
 
 
