@@ -76,10 +76,10 @@
 					<option value="4">Expert</option>
 				</select> -->
 
-				<button class="button add" id="addskill">Add</button>
+			<button class="button add" id="addskill">Add</button>
 				
-				<ul class="skilllist"></ul>
-				<ul class ="skilllevel"></ul>
+			<ul class="skilllist"></ul>
+			<ul class ="skilllevel"></ul>
 
 				<!-- <div class="meter">
 					<span style="width: 25%"></span>
@@ -128,8 +128,6 @@
 			<ul class = "wantlist"></ul>
 			<ul class ="wantlevel"></ul>
 
-			
-
 		</div>
 
 	</section>
@@ -143,6 +141,8 @@
 	</section>
 
 <!-- FULL PROFILE SECTION -->
+
+<!-- SLIDE DOWN SECTIONS -->
 
 	<section id="fullprofile" class="fullprofile">
 		<div class="aboutme">
@@ -177,6 +177,18 @@
 			</div>
 		</div>
 
+		<div class="contactinfo">
+			<h3>Contact Info</h3>
+			<div class="inputs">
+				<p>Love me, follow me...</p>
+				<a class="contactcomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+
+<!-- EDITABLE PROFILE SECTIONS - ABOUT ME, EDUCATION, INTERESTS, PORTFOLIO LINKS -->
+
+<!-- ABOUT ME -->
+
 		<div class="overlay">
 			<div class="overlay-content aboutcontent">
 				<h3>About Me</h3>
@@ -192,6 +204,8 @@
 					<p>Cancel</p>
 				</button>
 			</div>
+
+<!-- EDUCATION -->
 
 			<div class="overlay-content educontent">
 				<h3>Education</h3>
@@ -211,16 +225,15 @@
 				</button>
 			</div>
 
-				
 				<button class="profilebutton">
 					<p>Save</p>
 				</button>
-				
 				<button class="profilebutton cancel">
 					<p>Cancel</p>
-				
 				</button>
 			</div>
+
+<!-- OTHER INTERESTS -->
 
 			<div class="overlay-content othercontent">
 				<h3>Other Interests</h3>
@@ -237,10 +250,12 @@
 				</button>
 			</div>
 
+<!-- PORTFOLIO LINKS -->
+
 			<div class="overlay-content portcontent">
 				<h3>Portfolio Links</h3>
 
-			<div class="inputs">
+				<div class="inputs">
 					<div class="portinfo">
 						<input class="nameproject" type="text" placeholder="Name of Project">
 						<input class="nameproject" type="text" placeholder="URL">
@@ -252,24 +267,55 @@
 				<button class="profilebutton addport">
 					<p>Add More</p>
 				</button>
+				</div>
+
+				<button class="profilebutton">
+					<p>Save</p>
+				</button>				
+				<button class="profilebutton cancel">
+					<p>Cancel</p>				
+				</button>
 			</div>
 
-				
+<!-- CONTACT INFO -->
+
+			<div class="overlay-content contactcontent">
+				<h3>Contact Info</h3>
+			
+				<div class="inputs">
+					<div class="socialicons">
+						<i class="fa fa-github-square fa-3x"></i>
+						<i class="twitter fa fa-twitter-square fa-3x"></i>
+						<i class="facebook fa fa-facebook-square fa-3x"></i>
+						<i class="linkedin fa fa-linkedin-square fa-3x"></i>
+						<i class="mail fa fa-envelope-square fa-3x"></i>
+					</div>
+
+					<div class="socialtext">
+						<input class="contacttext" type="text" placeholder="Github URL">
+						<input class="contacttext" type="text" placeholder="Twitter URL">
+						<input class="contacttext" type="text" placeholder="Facebook URL">
+						<input class="contacttext" type="text" placeholder="LinkedIn URL">
+						<input class="contacttext" type="text" placeholder="Email Address">
+					</div>
+
+				</div>
+
+			<div class="contactbuttons">
 				<button class="profilebutton">
 					<p>Save</p>
 				</button>
-				
 				<button class="profilebutton cancel">
 					<p>Cancel</p>
-				
 				</button>
+			</div>
 			</div>
 
 		</div>
 
 	</section>
 
-	<script>
+<script>
 
 // ADDING SKILL LEVEL FROM THE DROPDOWN MENU TO THE UL LIST BELOW
 
@@ -318,7 +364,7 @@
 // 'Complete Profile' Button
 
 	$('#complete').on('click',function(){
-			$('#fullprofile').slideDown('slow');
+			$('#fullprofile').slideDown('fast');
 		});
 
 
@@ -383,6 +429,19 @@
 
 			$('.overlay').fadeIn('fast').css({'height' : docHeight});
 			$('.portcontent' + selectedPopup).show();
+			$('.overlay-content').css({'top' : scrollTop+40+'px'});
+		});
+
+// Overlay for 'Contact Info' Details
+
+			$('.contactcomplete').click(function(event){
+			event.preventDefault();
+			var docHeight = $(document).height();
+			var scrollTop = $(window).scrollTop();
+			var selectedPopup = $(this).data('showpopup');
+
+			$('.overlay').fadeIn('fast').css({'height' : docHeight});
+			$('.contactcontent' + selectedPopup).show();
 			$('.overlay-content').css({'top' : scrollTop+40+'px'});
 		});
 

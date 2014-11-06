@@ -81,7 +81,8 @@ body {
 h3 {
   font: 300 22px/150% "Roboto Condensed", Sans-serif, Serif;
   color: #565a5c;
-  padding: 12px; }
+  padding: 12px;
+  padding-left: 14px; }
 
 h4 {
   font: 300 19px/150% "Roboto", Sans-serif, Serif; }
@@ -129,10 +130,13 @@ h1 {
   .button h5,
   .profilebutton h5 {
     color: #fff;
-    font: 300 25px/150% "Roboto Condensed", Sans-serif, Serif;
+    font: 300 20px/150% "Roboto", Sans-serif, Serif;
     text-align: center;
     padding-bottom: 5px;
     padding-top: 5px; }
+
+.profilebutton {
+  width: 75px; }
 
 .learnmore {
   margin-top: 100px;
@@ -409,7 +413,8 @@ Profile Page - Skills Section
 .aboutme,
 .education,
 .otherinterests,
-.portfolio {
+.portfolio,
+.contactinfo {
   background-color: #fff;
   float: left;
   width: 30%;
@@ -423,17 +428,39 @@ Profile Page - Skills Section
   .aboutme ul,
   .education ul,
   .otherinterests ul,
-  .portfolio ul {
+  .portfolio ul,
+  .contactinfo ul {
     padding-bottom: 12px; }
     .learning ul li,
     .havelearned ul li,
     .aboutme ul li,
     .education ul li,
     .otherinterests ul li,
-    .portfolio ul li {
+    .portfolio ul li,
+    .contactinfo ul li {
       padding-left: 24px;
       font: 300 16px/150% "Roboto Condensed", Sans-serif, Serif;
       color: #565a5c; }
+
+.aboutme,
+.aboutcontent {
+  border-top: 3px solid #e74c3c; }
+
+.education,
+.educontent {
+  border-top: 3px solid #1abc9c; }
+
+.otherinterests,
+.othercontent {
+  border-top: 3px solid #8e44ad; }
+
+.portfolio,
+.portcontent {
+  border-top: 3px solid #f1c40f; }
+
+.contactinfo,
+.contactcontent {
+  border-top: 3px solid #19B5FE; }
 
 .havelearned {
   margin-right: 20px; }
@@ -442,11 +469,8 @@ Profile Page - Skills Section
   clear: both; }
 
 .prof {
-  width: 400px;
-  margin-top: 50px;
+  width: 240px;
   opacity: 1; }
-  .prof h5 {
-    font-family: "Roboto", Sans-serif, Serif; }
 
 .fullprofile {
   display: none;
@@ -456,7 +480,8 @@ Profile Page - Skills Section
 .otherinterests {
   margin-right: 20px; }
 
-.otherinterests {
+.otherinterests,
+.contactinfo {
   clear: both; }
 
 /*
@@ -573,3 +598,35 @@ button.addport {
   margin-left: 0;
   margin-top: 12px;
   margin-bottom: 12px; }
+
+.socialicon {
+  width: 100%; }
+
+.contactbuttons {
+  clear: both; }
+
+.contactcontent {
+  width: 30%; }
+
+i.facebook {
+  color: #425F9C; }
+
+i.twitter {
+  color: #4099FF; }
+
+i.linkedin {
+  color: #1B86BC; }
+
+i.mail {
+  color: #B81F24; }
+
+.socialicons {
+  float: left;
+  width: 17%; }
+
+input.contacttext {
+  margin-bottom: 12px;
+  width: 80%; }
+
+.socialicons i {
+  margin-bottom: 10px; }
