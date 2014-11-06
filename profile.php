@@ -155,6 +155,14 @@
 			</div>
 		</div>
 
+		<div class="portfolio">
+			<h3>Portfolio Links</h3>
+			<div class="inputs">
+				<p>Check out my work...</p>
+				<a class="portcomplete" href = "#" data-showpopup>Edit</a>
+			</div>
+		</div>
+		
 		<div class="otherinterests">
 			<h3>Other Interests</h3>
 			<div class="inputs">
@@ -163,13 +171,6 @@
 			</div>
 		</div>
 
-		<div class="portfolio">
-			<h3>Portfolio Links</h3>
-			<div class="inputs">
-				<p>Check out my work...</p>
-				<a class="portcomplete" href = "#" data-showpopup>Edit</a>
-			</div>
-		</div>
 
 		<div class="contactinfo">
 			<h3>Contact Info</h3>
