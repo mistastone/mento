@@ -157,9 +157,9 @@ $('#signup').click(function() {
 
 	$('.addschool').click(function(){
 		$('.schoolinfo:first').clone().find('input:text').val('').end().appendTo('.schoolcontainer');
-		$('.profilebutton.cancel').click(function(){
+		// $('.profilebutton.cancel').click(function(){
 			// $('.schoolinfo:first')remove();
-		});
+		// });
 	});
 
 // Add Additional Portfolio Item, Link, and Description
@@ -263,7 +263,7 @@ $('#signup').click(function() {
 
 
 	$('.profilebutton.aboutsave').click(function(){
-		var aboutdetails = $('textarea').val();
+		var aboutdetails = $('.aboutmetext').val();
 		$('.aboutplaceholder').remove();
 		$('.aboutfill').append('<p>' + aboutdetails + '</p>');
 		$('.overlay, .overlay-content').fadeOut('fast');
@@ -275,3 +275,29 @@ $('#signup').click(function() {
 	// 	$('.schoollist').append('<li>' + edudetails + '</li>');
 	// 	$('.overlay, .overlay-content').fadeOut('fast');
 	// });
+
+	$('.profilebutton.edusave').click(function(){
+		var eduschool = $('.schoolname').val();
+		var eduprogram = $('.schoolprogram').val();
+		var eduyearstart = $('.yearstart').val();
+		var eduyearend = $('.yearend').val();
+		$('.eduplaceholder').remove();
+		$('.edufill').append('<p>' + '<span>' + eduschool + '</span>' + ' ' + eduprogram + ',' + ' ' + eduyearstart + ' ' + '-' + ' ' + eduyearend + '</p>');
+		$('.overlay, .overlay-content').fadeOut('fast');
+	});
+
+	$('.profilebutton.interestsave').click(function(){
+		var interestdetails = $('.interesttext').val();
+		$('.interestplaceholder').remove();
+		$('.interestfill').append('<p>' + interestdetails + '</p>');
+		$('.overlay, .overlay-content').fadeOut('fast');
+	});
+	
+	$('.profilebutton.portsave').click(function(){
+		var portname = $('.projectname').val();
+		var porturl = $('.projecturl').val();
+		var portdescription = $('.projectdescription').val();
+		$('.portplaceholder').remove();
+		$('.portfill').append('<p>' + '<span>' + portname + '</span>' + '<span>' + porturl + '</span>' + portdescription + '</p>');
+		$('.overlay, .overlay-content').fadeOut('fast');
+	});

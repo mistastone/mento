@@ -150,7 +150,7 @@
 			<h3>Education</h3>
 			<div class="inputs">
 				<p class= "eduplaceholder">Where I got educated...</p>
-				<!-- <ul class="schoollist"></ul> -->
+				<p class="edufill"></p>
 				<a class="educomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
@@ -158,15 +158,17 @@
 		<div class="portfolio">
 			<h3>Portfolio Links</h3>
 			<div class="inputs">
-				<p>Check out my work...</p>
+				<p class = "portplaceholder">Check out my work...</p>
+				<p class= "portfill"></p>
 				<a class="portcomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
-		
+
 		<div class="otherinterests">
 			<h3>Other Interests</h3>
 			<div class="inputs">
-				<p>When I'm not designing or coding I like to...</p>
+				<p class="interestplaceholder">When I'm not designing or coding I like to...</p>
+				<p class= "interestfill"></p>
 				<a class="othercomplete" href = "#" data-showpopup>Edit</a>
 			</div>
 		</div>
@@ -189,7 +191,7 @@
 				<h3>About Me</h3>
 
 				<div class="inputs">
-					<textarea maxlength="600" rows="6" placeholder="A little story about me and what I do..."></textarea>
+					<textarea class = "aboutmetext" maxlength="600" rows="6" placeholder="A little story about me and what I do..."></textarea>
 				</div>
 			
 				<button class="profilebutton aboutsave">
@@ -208,19 +210,20 @@
 				<div class="inputs">
 					<div class="schoolinfo">
 						<input class="schoolname" type="text" placeholder="School Name">
-						<input class="schoolname" type="text" placeholder="Program">
-						<input class="year" type="text" placeholder="Year Started">
-						<input class="year" type="text" placeholder="Year Finished">
+						<input class="schoolprogram" type="text" placeholder="Program">
+						<input maxlength="4" class="yearstart" type="text" placeholder="Year Started">
+						<input maxlength="4" class="yearend" type="text" placeholder="Year Finished">
 					</div>
-					
+
 					<div class="schoolcontainer"></div>
+					
 				
 				<button class="profilebutton addschool">
 					<p>Add More</p>
 				</button>
 			</div>
 
-				<button class="profilebutton save">
+				<button class="profilebutton edusave">
 					<p>Save</p>
 				</button>
 				<button class="profilebutton cancel">
@@ -234,10 +237,10 @@
 				<h3>Other Interests</h3>
 
 				<div class="inputs">
-					<textarea rows="6" placeholder="When I'm not designing or coding I like to..."></textarea>
+					<textarea class = "interesttext" maxlength="600" rows="6" placeholder="When I'm not designing or coding I like to..."></textarea>
 				</div>
 			
-				<button class="profilebutton">
+				<button class="profilebutton interestsave">
 					<p>Save</p>
 				</button>
 				<button class="profilebutton cancel">
@@ -252,9 +255,9 @@
 
 				<div class="inputs">
 					<div class="portinfo">
-						<input class="nameproject" type="text" placeholder="Name of Project">
-						<input class="nameproject" type="text" placeholder="URL">
-						<textarea rows="6" placeholder="Description, languages, and tools used..."></textarea>
+						<input class="projectname" type="text" placeholder="Name of Project">
+						<input class="projecturl" type="text" placeholder="URL">
+						<textarea class = "projectdescription" rows="6" placeholder="Description, languages, and tools used..."></textarea>
 					</div>
 					
 					<div class="portcontainer"></div>
@@ -264,7 +267,7 @@
 				</button>
 				</div>
 
-				<button class="profilebutton">
+				<button class="profilebutton portsave">
 					<p>Save</p>
 				</button>				
 				<button class="profilebutton cancel">
